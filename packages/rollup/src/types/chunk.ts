@@ -1,58 +1,30 @@
-import { OutputOptions } from "./config"
-
-export interface ChunkOptions {
-    id: string;
-    modules: ModuleInfo[];
-    isEntry: boolean;
-    isDynamicEntry: boolean;
-    facadeModuleId?: string;
-    name?: string;
-}
-
-export interface ChunkInfo {
+export interface Chunk {
     id: string;
     name: string;
-    isEntry: boolean;
-    isDynamicEntry: boolean;
-    isImplicitEntry: boolean;
+    fileName: string;
     facadeModuleId: string | null;
+    isDynamicEntry: boolean;
+    isEntry: boolean;
+    isImplicitEntry: boolean;
     modules: Record<string, RenderedModule>;
-    exports: string[];
     imports: string[];
     dynamicImports: string[];
-    fileName: string;
-    size: number;
-    type: 'chunk';
+    exports: string[];
+    code: string;
+    map: any;
+    preliminaryFileName: string;
+    entryModules: string[];
+
+    // 方法
+    generateCode(): string;
+    getImportPath(chunk: Chunk): string;
+    render(): string;
 }
 
 export interface RenderedModule {
-    code: string | null;
     originalLength: number;
     removedExports: string[];
     renderedExports: string[];
     renderedLength: number;
-}
-
-export interface ChunkDependency {
-    id: string;
-    name: string;
-    isExternal: boolean;
-    isDynamic: boolean;
-    importedNames: string[];
-    reexportedNames: string[];
-}
-
-export interface ChunkImport {
-    name: string;
-    localName: string;
-    isDefault: boolean;
-    isNamespace: boolean;
-    module: ModuleInfo;
-}
-
-export interface ChunkGraph {
-    chunks: Map<string, ChunkInfo>;
-    dependencies: Map<string, ChunkDependency[]>;
-    entryChunks: Set<string>;
-    dynamicChunks: Set<string>;
+    code: string | null;
 }
