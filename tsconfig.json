@@ -1,0 +1,54 @@
+{
+    "compilerOptions": {
+      "target": "ES2022",
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "allowImportingTsExtensions": false,
+      "strict": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "composite": true,
+      "incremental": true,
+      "tsBuildInfoFile": "./dist/.tsbuildinfo",
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "resolveJsonModule": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "noEmit": false,
+      "noEmitOnError": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "noUncheckedIndexedAccess": true,
+      "exactOptionalPropertyTypes": true,
+      "removeComments": false,
+      "preserveConstEnums": true,
+      "lib": ["ES2022", "DOM"],
+      "types": ["node", "vitest/globals"]
+    },
+    "include": [
+      "packages/*/src/**/*",
+      "packages/*/test/**/*"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "**/*.test.ts",
+      "**/*.spec.ts"
+    ],
+    "references": [
+        {
+            "path": "./packages/rollup"
+        },
+        {
+            "path": "./packages/cli",
+        },
+    ]
+  }

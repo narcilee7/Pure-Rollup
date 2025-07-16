@@ -1,0 +1,43 @@
+{
+    "name": "pure-rollup",
+    "version": "1.0.0",
+    "description": "A deep implementation of Rollup bundler for learning purposes",
+    "main": "index.js",
+    "private": true,
+    "workspaces": [
+      "packages/*"
+    ],
+    "scripts": {
+      "build": "pnpm -r run build",
+      "dev": "pnpm -r run dev",
+      "test": "pnpm -r run test",
+      "lint": "eslint packages/**/*.ts",
+      "format": "prettier --write packages/**/*.ts",
+      "clean": "pnpm -r run clean",
+      "type-check": "pnpm -r run type-check"
+    },
+    "devDependencies": {
+      "@types/node": "^20.10.0",
+      "@typescript-eslint/eslint-plugin": "^6.13.0",
+      "@typescript-eslint/parser": "^6.13.0",
+      "eslint": "^8.54.0",
+      "prettier": "^3.1.0",
+      "typescript": "^5.3.0",
+      "vitest": "^1.0.0",
+      "tsx": "^4.6.0"
+    },
+    "engines": {
+      "node": ">=18.0.0",
+      "pnpm": ">=8.0.0"
+    },
+    "packageManager": "pnpm@8.12.0",
+    "keywords": [
+      "rollup",
+      "bundler",
+      "javascript",
+      "typescript",
+      "build-tool"
+    ],
+    "author": "narclee7",
+    "license": "MIT"
+  }

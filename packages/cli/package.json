@@ -1,0 +1,43 @@
+{
+    "name": "@pure-rollup/cli",
+    "version": "1.0.0",
+    "description": "CLI for Pure Rollup bundler",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "bin": {
+      "pure-rollup": "./dist/index.js"
+    },
+    "files": [
+      "dist",
+      "src"
+    ],
+    "scripts": {
+      "build": "tsc -p tsconfig.build.json",
+      "dev": "tsc -p tsconfig.build.json --watch",
+      "test": "vitest",
+      "clean": "rm -rf dist",
+      "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+      "@pure-rollup/rollup": "workspace:*",
+      "commander": "^11.1.0",
+      "kleur": "^4.1.5",
+      "sade": "^1.8.1"
+    },
+    "devDependencies": {
+      "@types/node": "^20.10.0",
+      "typescript": "^5.3.0",
+      "vitest": "^1.0.0"
+    },
+    "engines": {
+      "node": ">=18.0.0"
+    },
+    "keywords": [
+      "rollup",
+      "cli",
+      "bundler",
+      "build-tool"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+  }
